@@ -21,8 +21,8 @@ const renderHelper = (tasks, options, level) => {
 			const lastLine = task.output.trim().split('\n').filter(Boolean).pop();
 
 			if (lastLine) {
-				const out = indentString(`${figures.arrowRight} ${stripAnsi(lastLine.trim())}`, level, '  ');
-				output.push(`   ${chalk.gray(cliTruncate(out, process.stdout.columns - 3))}`);
+				const out = indentString(`${figures.arrowRight} ${lastLine.trim()}`, level, '  ');
+				output.push(`   ${cliTruncate(out, process.stdout.columns - 3)}`);
 			}
 		}
 
